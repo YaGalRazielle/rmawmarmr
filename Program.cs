@@ -8,7 +8,10 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BancoContext>(option =>
 {
-    option.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"));
+    option.UseMySql(
+        builder.Configuration.GetConnectionString("DataBase"),
+        ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DataBase"))
+    );
 });
 
 builder.Services.AddScoped<IContatoRepositorio, ContatoRepositorio>();

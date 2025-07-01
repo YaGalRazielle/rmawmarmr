@@ -7,7 +7,6 @@ namespace MeowColonThree.Data
     {
         public BancoContext(DbContextOptions<BancoContext> options) : base(options)
         {
-
         }   
         public DbSet<ContatoModel> Contatos {  get; set; }
     }
